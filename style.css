@@ -1,0 +1,138 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+ul{
+  display: inline;
+}
+
+li{
+  list-style: none;
+  margin: 1rem 2rem;
+  border: 2px solid rosybrown;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+form{
+  display: flex;
+}
+
+form > input{
+  width: 90vw;
+  height: 7vh;
+  text-align: center;
+  border: 2px solid lightseagreen;
+  font-size: 20px;
+}
+
+form > button{
+  width: 10vw;
+  border: 2px solid salmon;
+  background-color: darksalmon;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.toolbar{
+  width: 100vw;
+  height: 10vh;
+  background-color: lightgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: midnightblue;
+}
+
+.toolbar h1{
+  font-weight: 600;
+}
+
+.toolbar span{
+  font-weight: 300;
+}
+
+.container{
+  height: 83vh;
+  background-color: lavender;
+  padding: 1rem 4rem;
+  display: flex;
+}
+
+.pending{
+  flex: 2;
+}
+
+.pending h2, .details h2{
+  text-align: center;
+  font-weight: 600;
+}
+
+.complete{
+  background-color: rgb(255, 220, 255);
+  border: 2px solid crimson;
+  color: lightslategrey;
+}
+
+.selected{
+  background-color: ivory;
+  border-color: lightseagreen;
+}
+
+.pending, .details{
+  border: 2px solid burlywood;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  margin: 0rem 1rem;
+}
+
+.details{
+  flex: 1;
+}
+
+.content{
+  margin: 1rem 2rem;
+}
+
+@media only screen and (max-width: 720px){
+  form{
+    display: block;
+  }
+
+  form > input{
+    width: 100vw;
+    height: 10vh;
+  }
+
+  form > button{
+    width: 100vw;
+    height: 5vh;
+  }
+
+  .container{
+    flex-direction: column;
+    padding: 4rem 0;
+    height: auto;
+  }
+
+  .pending{
+    margin-bottom: 4rem;
+  }
+
+  .details{
+    margin-bottom: 2rem;
+  }
+}
+

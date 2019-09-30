@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <title>REDtodo</title>
+</head>
+<body>
+  <div class="toolbar">
+    <h1>RED<span>todo</span></h1>
+  </div>
+
+  <form>
+    <input type="text" placeholder="New Todo">
+    <button>Add Todo</button>
+  </form>
+
+  <div class="container">
+    <div class="pending">
+      <h2>Todo List</h2>
+      <ul>
+        <li>
+          <a href="#details">Todo 1</a>
+        </li>
+        <li class="complete">
+          <a href="#details">Todo 2</a>
+        </li>
+        <li>
+          <a href="#details">Todo 3</a>
+        </li>
+        <li class="selected">
+          <a href="#details">Todo 4</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="details" id="details">
+      <h2>Details</h2>
+
+      <div class="content">
+        <p class="date">Date</p>
+        <p class="status">Status</p>
+        <p class="description">Description</p>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
