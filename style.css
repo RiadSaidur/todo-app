@@ -18,6 +18,7 @@ li{
   border: 2px solid rosybrown;
   border-radius: 4px;
   padding: 1rem;
+  background-color: ivory;
 }
 
 form{
@@ -38,7 +39,10 @@ form > button{
   background-color: darksalmon;
   font-weight: 500;
   font-size: 20px;
+  cursor: pointer;
 }
+
+button:focus {outline:0;}
 
 a{
   text-decoration: none;
@@ -57,11 +61,15 @@ a{
 }
 
 .toolbar h1{
-  font-weight: 600;
+  font-weight: 400;
+    font-family: 'Pacifico', cursive;
+    color: darkred;
 }
 
 .toolbar span{
-  font-weight: 300;
+  font-weight: 200;
+    font-size: 40px;
+    padding-left: .3rem;
 }
 
 .container{
@@ -88,7 +96,7 @@ a{
 
 .selected{
   background-color: ivory;
-  border-color: lightseagreen;
+  border: 3px solid lightseagreen;
 }
 
 .pending, .details{
@@ -106,6 +114,22 @@ a{
   margin: 1rem 2rem;
 }
 
+.content > div{
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 0;
+}
+
+.content button{
+  padding: .5rem 1rem;
+  cursor: pointer;
+  background: rgb(255, 220, 255);
+  border: 2px solid crimson;
+  border-radius: 4px;
+  color: crimson;
+  font-weight: 500;
+}
+
 @media only screen and (max-width: 720px){
   form{
     display: block;
@@ -118,7 +142,6 @@ a{
 
   form > button{
     width: 100vw;
-    height: 5vh;
   }
 
   .container{
