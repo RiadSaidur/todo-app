@@ -20,27 +20,26 @@ window.addEventListener('load', () => {
 
     todo.value = 'New Todo ' + identity;
 
-    console.log('add todo');
+    refresh();
+
   }
 
   // creates a new element
   function createNewTodoElement(todo){
-    let newDiv = document.createElement('div');
+    let newDiv = document.createElement('p');
+    newDiv.setAttribute('id', 'pending');
     newDiv.innerHTML = todo;
 
     let newLink = document.createElement('a');
-    newLink.setAttribute('href', '#details');
-    newLink.setAttribute('id', identity);
+    newLink.setAttribute('href', '#details');    
     newLink.appendChild(newDiv);
 
     let newTodo = document.createElement('li');
+    newTodo.setAttribute('id', identity);
     newTodo.appendChild(newLink);
 
     identity++;
 
-    console.log(newLink);
-
-    // need this to return element for LOAD-TODOS function from LINE 52
     return newTodo;
   }
 
@@ -66,11 +65,41 @@ window.addEventListener('load', () => {
     console.log('load todo');
   }
 
-  // currently inactive
-  document.querySelector('.finished').addEventListener('click', () => {
+  let current = document.querySelector('.selected');
 
-    console.log('finished');
+  function refresh(){
 
-  });
+    let todos = document.querySelectorAll('.todo p');
+    let todoList = document.querySelectorAll('.todo');
+
+    todos.forEach(todo => {
+      todo.addEventListener('click', () => {
+
+        let description = document.querySelector('.description');
+        description.innerText = `Description: ${todo.innerText}`;
+        document.querySelector('.status').innerText = `Status: ${todo.id}`;
+
+        current.classList.remove('selected');
+        todo.parentElement.parentElement.classList.add('selected');
+        current = todo.parentElement.parentElement;
+
+        document.querySelector('.finished').addEventListener('click', () => {
+          current.classList.remove('selected');
+          current.classList.add('complete');
+
+        });
+
+        document.querySelector('.delete').addEventListener('click', () => {
+          current.remove();
+          description.innerText = `Description: `;
+          document.querySelector('.status').innerText = `Status: `;
+        });
+        
+      });
+    });
+
+  }
+
+  refresh();
 
 });
