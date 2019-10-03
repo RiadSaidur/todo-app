@@ -11,17 +11,22 @@ window.addEventListener('load', () => {
   function addTodo(){
     const todo = document.querySelector('.todoItem');
 
-    const todoElement = createNewTodoElement(todo.value);
+    if(todo.value){
+
+      const todoElement = createNewTodoElement(todo.value);
     
-    const todoContainer = document.querySelector('.todo');
-    const bound = document.querySelector('.bound');
+      const todoContainer = document.querySelector('.todo');
+      const bound = document.querySelector('.bound');
 
-    todoContainer.insertBefore(todoElement, bound);
+      todoContainer.insertBefore(todoElement, bound);
 
-    todo.value = 'New Todo ' + identity;
+      refresh();
 
-    refresh();
+      todo.value = '';
 
+    }
+
+    else alert('New Todo can not be empty');
   }
 
   // creates a new element
