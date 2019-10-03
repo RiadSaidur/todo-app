@@ -81,6 +81,7 @@ a{
 
 .pending{
   flex: 2;
+  overflow: auto;
 }
 
 .pending h2, .details h2{
