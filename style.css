@@ -42,7 +42,9 @@ form > button{
   cursor: pointer;
 }
 
-button:focus {outline:0;}
+button:focus {
+  outline:0;
+}
 
 a{
   text-decoration: none;
@@ -129,6 +131,10 @@ a{
   border-radius: 4px;
   color: crimson;
   font-weight: 500;
+}
+
+.content button:focus{
+  border: 3px solid lightseagreen;
 }
 
 @media only screen and (max-width: 720px){
