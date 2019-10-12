@@ -93,6 +93,9 @@ window.addEventListener('load', () => {
 
         markComplete.addEventListener('click', () => {
           current.classList.add('complete');
+          todo.id='completed';
+          document.querySelector('.status').innerText = `Status: ${todo.id}`;
+          console.log(todo.id)
         });
 
         dlt.addEventListener('click', () => {
